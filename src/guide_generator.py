@@ -291,11 +291,16 @@ class GuideGenerator:
 
         return "\n".join(lines)
 
-    # ── HTML ───────────────────────────────────────────────────────
+        # ── HTML ───────────────────────────────────────────────────────
     def generate_html(self, scan_results, diff=None, licenses=None, startup_programs=None):
         """Rehberin HTML versiyonunu oluşturur."""
         d = self._collect_data(scan_results, diff, licenses, startup_programs)
         sections = []
+        nav_links = []
+
+        def _add_section(id_name, nav_text, html_card):
+            nav_links.append(f'<a href="#{id_name}">{nav_text}</a>')
+            sections.append(f'<div id="{id_name}">{html_card}</div>')
 
         # Değişiklikler
         if d["diff"]:
@@ -304,15 +309,20 @@ class GuideGenerator:
             if new_list:
                 rows = "".join(f"<tr><td>{p['program_adi']}</td><td>{p.get('versiyon','')}</td>"
                                f"<td>{p.get('yayinci','')}</td></tr>" for p in new_list[:30])
-                sections.append(self._html_card("🟢 Yeni Kurulan", f"{len(new_list)} program",
+                card = self._html_card("🟢 Yeni Kurulan", f"{len(new_list)} program",
+                    f"<p style='margin-bottom:10px;color:#8b949e'>Son taramadan bu yana yeni tespit edilen programlar.</p>"
                     f"<table><thead><tr><th>Program</th><th>Versiyon</th><th>Yayıncı</th></tr></thead>"
-                    f"<tbody>{rows}</tbody></table>"))
+                    f"<tbody>{rows}</tbody></table>")
+                _add_section("diff_new", "✨ Yeni Programlar", card)
+
             if removed_list:
                 rows = "".join(f"<tr><td>{p['program_adi']}</td><td>{p.get('versiyon','')}</td></tr>"
                                for p in removed_list[:30])
-                sections.append(self._html_card("🔴 Kaldırılan", f"{len(removed_list)} program",
+                card = self._html_card("🔴 Kaldırılan", f"{len(removed_list)} program",
+                    f"<p style='margin-bottom:10px;color:#8b949e'>Son taramada olan ancak artık bulunamayan programlar.</p>"
                     f"<table><thead><tr><th>Program</th><th>Versiyon</th></tr></thead>"
-                    f"<tbody>{rows}</tbody></table>"))
+                    f"<tbody>{rows}</tbody></table>")
+                _add_section("diff_removed", "🗑 Şilinen Programlar", card)
 
         # Güvende
         if d["other_disk"]:
@@ -322,12 +332,14 @@ class GuideGenerator:
                 rows += (f"<tr><td>{p['program_adi']}</td><td>{disk}:</td>"
                          f"<td class='right'>{p['boyut_mb']}</td>"
                          f"<td class='mono'>{p['kurulum_yolu'][:60]}</td></tr>")
-            sections.append(self._html_card("🟢 Başka Diskte — Güvende",
+            card = self._html_card("🟢 Başka Diskte — YENİDEN KURMANA GEREK YOK",
                 f"{len(d['other_disk'])} program",
+                f"<p style='margin-bottom:10px;color:#8b949e'>🎯 <strong>Analiz Önerisi:</strong> Bu programlar/oyunlar (Gigabaytlarca yer tutan Steam kütüphanen dahil) format atacağın C: diskinde değil! Format sonrası bunları silmene veya yeniden indirmene gerek yok; sadece ana uygulamadan kütüphane yolunu göstermen yeterli.</p>"
                 f"<table><thead><tr><th>Program</th><th>Disk</th><th>MB</th><th>Yol</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("other_disk", "🟢 Güvendekiler", card)
 
-        # C diskinde
+        # C diskinde (Yeniden Kurulacak)
         if d["c_disk"]:
             rows = ""
             for p in sorted(d["c_disk"], key=lambda x: x["boyut_mb"], reverse=True)[:50]:
@@ -335,10 +347,12 @@ class GuideGenerator:
                 link_html = f'<a href="{link}" target="_blank">İndir</a>' if link else "—"
                 rows += (f"<tr><td>{p['program_adi']}</td><td>{p.get('versiyon','')}</td>"
                          f"<td class='right'>{p['boyut_mb']}</td><td>{link_html}</td></tr>")
-            sections.append(self._html_card("🔵 Yeniden Kurulacaklar (C:)",
+            card = self._html_card("🔵 C Diskinde — YENİDEN KURULACAKLAR",
                 f"{len(d['c_disk'])} program",
+                f"<p style='margin-bottom:10px;color:#8b949e'>⚠️ <strong>Analiz Önerisi:</strong> Sistem diskinde kurulu olduklarından formattan sonra bu programları tekrar yüklemen (veya Setup edinmen) gerekecek.</p>"
                 f"<table><thead><tr><th>Program</th><th>Versiyon</th><th>MB</th><th>İndir</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("c_disk", "🔵 Kurulacaklar", card)
 
         # AppData
         if d["important"]:
@@ -347,9 +361,21 @@ class GuideGenerator:
                 rows += (f"<tr><td><strong>{p['program_adi']}</strong></td>"
                          f"<td class='right'>{p['boyut_mb']}</td>"
                          f"<td class='mono'>{p['kurulum_yolu'][:70]}</td></tr>")
-            sections.append(self._html_card("🔴 Yedekle — AppData", f"{len(d['important'])} klasör",
+            card = self._html_card("🔴 Yedekle — AppData Özel Verileri", f"{len(d['important'])} klasör",
+                f"<p style='margin-bottom:10px;color:#8b949e'>🚨 <strong>Önemli:</strong> Bu klasörler, kurulu programlarının ayarlarını (save'ler, config vs.) tutar. Formattan önce mutlaka yedeğini alıp formattan sonra geri atman önerilir.</p>"
                 f"<table><thead><tr><th>Klasör</th><th>MB</th><th>Konum</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("appdata", "🔴 Yedeklenecekler", card)
+            
+        # Temizlenebilir (Gereksizler)
+        if d["cleanup"]:
+            total_cleanup = sum(p["boyut_mb"] for p in d["cleanup"])
+            rows = "".join(f"<tr><td>{p['program_adi']}</td><td class='right'>{p['boyut_mb']}</td></tr>" for p in sorted(d["cleanup"], key=lambda x: x["boyut_mb"], reverse=True))
+            card = self._html_card("🗑️ TEMİZLENEBİLİR (Geçici ve Çöp Dosyalar)", f"~{round(total_cleanup / 1024, 1)} GB tasarruf",
+                f"<p style='margin-bottom:10px;color:#8b949e'>🧹 <strong>Analiz Önerisi:</strong> Sistemindeki geçici paketler, önbellekler veya crash raporlarıdır. Yedeklemene veya geri yüklemene gerek yoktur.</p>"
+                f"<table><thead><tr><th>Öğe</th><th>Boyut (MB)</th></tr></thead>"
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("cleanup", "🗑 Gereksizler", card)
 
         # Başlangıç
         if d["startup_programs"]:
@@ -358,10 +384,12 @@ class GuideGenerator:
                 rows += (f"<tr><td>{sp['name']}</td>"
                          f"<td class='mono'>{sp.get('command','')[:80]}</td>"
                          f"<td>{sp.get('source','')}</td></tr>")
-            sections.append(self._html_card("🚀 Başlangıç Programları",
+            card = self._html_card("🚀 Başlangıç Programları",
                 f"{len(d['startup_programs'])} öğe",
+                f"<p style='margin-bottom:10px;color:#8b949e'>Sistem ile otomatik başlayan programlardır.</p>"
                 f"<table><thead><tr><th>Program</th><th>Komut</th><th>Kaynak</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("startup", "🚀 Başlangıç", card)
 
         # Lisanslar
         if d["licenses"]:
@@ -370,21 +398,24 @@ class GuideGenerator:
                 rows += (f"<tr><td><strong>{lic['program']}</strong></td>"
                          f"<td class='mono'>{lic['key']}</td>"
                          f"<td>{lic.get('notes','')}</td></tr>")
-            sections.append(self._html_card("🔑 Lisans Anahtarları", f"{len(d['licenses'])} adet",
+            card = self._html_card("🔑 Lisans Anahtarları", f"{len(d['licenses'])} adet",
+                f"<p style='margin-bottom:10px;color:#8b949e'>Kaybetmemen gereken aktivasyon anahtarları.</p>"
                 f"<table><thead><tr><th>Program</th><th>Anahtar</th><th>Not</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("licenses", "🔑 Lisanslar", card)
 
         # Kurulum sırası
-        sections.append(self._html_card("📋 Format Sonrası Kurulum Sırası", "",
+        card = self._html_card("📋 Format Sonrası Kurulum Sırası", "",
             "<ol>"
             "<li><strong>Windows sürücüleri</strong> — NVIDIA, Realtek, Intel, Chipset</li>"
             "<li><strong>Güvenlik</strong> — Antivirüs yazılımı</li>"
             "<li><strong>Tarayıcı</strong> — Chrome/Firefox (sync ile ayarlar geri gelir)</li>"
             "<li><strong>Geliştirme</strong> — VS Code → Git → Node.js → Python</li>"
             "<li><strong>Platform launcher'ları</strong> — Steam, Adobe CC, vb.</li>"
-            "<li><strong>Kütüphaneleri göster</strong> — Diğer disklerdeki klasörleri ekle</li>"
+            "<li><strong>Kütüphaneleri göster</strong> — Diğer disklerdeki oyun/program klasörlerini ekle</li>"
             "<li><strong>Diğer programlar</strong> — İhtiyaç oldukça kur</li>"
-            "</ol>"))
+            "</ol>")
+        _add_section("install_order", "📋 Kurulum Sırası", card)
 
         # Sürücüler
         if d["drivers"]:
@@ -395,11 +426,14 @@ class GuideGenerator:
                          f"<td>{drv.get('version','')}</td>"
                          f"<td>{drv.get('date','')}</td>"
                          f"<td class='mono'>{drv.get('inf_name','')}</td></tr>")
-            sections.append(self._html_card("🔧 Yüklü Sürücüler (3. Parti)",
+            card = self._html_card("🔧 Yüklü Sürücüler (3. Parti)",
                 f"{len(d['drivers'])} sürücü",
+                f"<p style='margin-bottom:10px;color:#8b949e'>Format sonrası eksik olan sürücüler için bu listeye başvurulabilir.</p>"
                 f"<table><thead><tr><th>Sağlayıcı</th><th>Sınıf</th><th>Versiyon</th><th>Tarih</th><th>INF</th></tr></thead>"
-                f"<tbody>{rows}</tbody></table>"))
+                f"<tbody>{rows}</tbody></table>")
+            _add_section("drivers", "🔧 Sürücüler", card)
 
+        nav_html = ' | '.join(nav_links)
         content = "\n".join(sections)
 
         return f"""<!DOCTYPE html>
@@ -491,6 +525,10 @@ class GuideGenerator:
             <div class="stat-val">{d['total_gb']:.1f} GB</div>
             <div class="stat-lbl">Toplam Boyut</div>
         </div>
+    </div>
+    
+    <div style="background:#1c2128; padding:15px; border-radius:8px; margin-bottom:20px; text-align:center; font-weight:600;">
+        {nav_html}
     </div>
 
     {content}
