@@ -13,6 +13,15 @@ class DriverScanner:
     def __init__(self):
         self._stop_flag = threading.Event()
 
+    def _decode_console(self, raw_bytes):
+        """Konsol çıktısını Türkçe Windows sistemlere uygun çözer."""
+        for enc in ['cp857', 'cp1254', 'utf-8']:
+            try:
+                return raw_bytes.decode(enc)
+            except UnicodeDecodeError:
+                continue
+        return raw_bytes.decode('utf-8', errors='replace')
+
     def stop(self):
         self._stop_flag.set()
 
@@ -27,15 +36,15 @@ class DriverScanner:
         try:
             result = subprocess.run(
                 ["pnputil", "/enum-drivers"],
-                capture_output=True, timeout=30,
-                encoding="utf-8", errors="replace"
+                capture_output=True, timeout=30
             )
             if result.returncode != 0:
                 if callback:
-                    callback(f"⚠️ pnputil hatası: {result.stderr.strip()}")
+                    err_msg = self._decode_console(result.stderr).strip()
+                    callback(f"⚠️ pnputil hatası: {err_msg}")
                 return drivers
 
-            output = result.stdout
+            output = self._decode_console(result.stdout)
         except FileNotFoundError:
             if callback:
                 callback("⚠️ pnputil bulunamadı (Windows dışı sistem?).")
@@ -142,8 +151,7 @@ class DriverScanner:
             try:
                 result = subprocess.run(
                     ["pnputil", "/export-driver", inf_name, drv_subdir],
-                    capture_output=True, timeout=15,
-                    encoding="utf-8", errors="replace"
+                    capture_output=True, timeout=15
                 )
                 if result.returncode == 0:
                     exported += 1
@@ -153,8 +161,8 @@ class DriverScanner:
                 else:
                     errors += 1
                     if progress_cb:
-                        progress_cb(idx + 1, total,
-                                    f"⚠️ {inf_name}: {result.stderr.strip()[:80]}")
+                        err_msg = self._decode_console(result.stderr).strip()[:80]
+                        progress_cb(idx + 1, total, f"⚠️ {inf_name}: {err_msg}")
 
             except (subprocess.TimeoutExpired, OSError) as e:
                 errors += 1
