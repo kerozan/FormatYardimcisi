@@ -60,8 +60,9 @@ Gelen bu program listesini incele ve aşağıdaki JSON formatında bir format re
   ]
 }}
 
-Sadece teknik olarak gerçekten önemli ve dikkat çeken MAX 30 programı analiz et.
-Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
+Sistemdeki gereksiz Microsoft/Windows paketlerini (örn. çoklu Visual C++ kurulumları), küçük donanım alt-sürücülerini ve önemsiz ufak yazılımları YAZMA. 
+SADECE KULLANICI İÇİN GERÇEK BİR DEĞER VEYA RİSK TAŞIYAN BÜYÜK VE KRİTİK UYGULAMALARI (Oyunlar, Geliştirici Araçları, Medya Editörleri vb.) LİSTELE. 
+Miktar limitin yoktur; gerçekten önemliyse 100 tane bile yazabilirsin. Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
 """
 
         user_content = json.dumps(compact_data, ensure_ascii=False)
