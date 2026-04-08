@@ -63,6 +63,39 @@ class ScanTab(ctk.CTkFrame):
         self.log = LogPanel(self, height=350)
         self.log.pack(fill="both", expand=True, padx=10, pady=(4, 10))
 
+        # Başlangıç durumu: Eski dosyaları kontrol et
+        self.after(100, self._check_previous_state)
+
+    def _check_previous_state(self):
+        """Uygulama açıldığında önceki rehber ve çıktıları kontrol edip butonları aktif eder."""
+        out = self.app.output_dir
+        
+        # Çıktı klasörü doluysa klasör butonunu aç
+        if os.path.exists(out) and len(os.listdir(out)) > 0:
+            self.btn_folder.configure(state="normal")
+            
+        # Rehber dosyası varsa butonunu aç
+        if os.path.exists(os.path.join(out, "yedekleme_rehberi.html")) or os.path.exists(os.path.join(out, "yedekleme_rehberi.md")):
+            self.btn_guide.configure(state="normal")
+
+        # Önceki tarama özetini göster
+        try:
+            prev = self.app.scanner.load_previous_scan()
+            if prev and prev.get("registry_programs"):
+                folder_count = len(prev.get("folder_programs", []))
+                reg_count = len(prev.get("registry_programs", []))
+                drv_count = len(prev.get("drivers", []))
+                total_gb = sum(p.get("boyut_mb", 0) for p in prev.get("folder_programs", [])) / 1024
+                
+                summary = f"Geçmiş Tarama ( {prev.get('scan_date', '')[:10]} ): 📊 {reg_count} registry programı + {folder_count} klasör öğesi | {total_gb:.1f} GB"
+                if drv_count:
+                    summary += f" | 🔧 {drv_count} sürücü"
+                    
+                self.lbl_summary.configure(text=summary)
+                self.log.log("ℹ️ Önceki tarama sonuçları tespit edildi. Rehberi veya çıktı klasörünü açabilirsiniz.\n")
+        except Exception:
+            pass
+
     # ── Tarama Kontrol ─────────────────────────────────────────────
     def _start_scan(self):
         self.btn_scan.configure(state="disabled")
