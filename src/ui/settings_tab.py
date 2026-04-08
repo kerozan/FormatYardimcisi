@@ -3,6 +3,8 @@
 
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
+import webbrowser
+
 from config_manager import VERSION, APP_NAME
 
 
@@ -117,6 +119,30 @@ class SettingsTab(ctk.CTkFrame):
         ctk.CTkEntry(entry_row, textvariable=self.target_var, width=350).pack(side="left", padx=(0, 4))
         ctk.CTkButton(entry_row, text="📁", width=40, command=self._browse_target).pack(side="left")
 
+        # ── Yapay Zeka (AI) Ayarları ──
+        ctk.CTkLabel(self, text="🤖 Yapay Zeka (AI) Ayarları",
+                     font=ctk.CTkFont(size=16, weight="bold"),
+                     anchor="w").pack(fill="x", padx=15, pady=(10, 3))
+
+        ai_frame = ctk.CTkFrame(self)
+        ai_frame.pack(fill="x", padx=15, pady=3)
+        
+        self.ai_var = ctk.BooleanVar(value=bool(self.app.config.get("use_ai_analyzer")))
+        ctk.CTkSwitch(ai_frame, text="Gemini AI Analizörünü Aktifleştir", variable=self.ai_var,
+                      font=ctk.CTkFont(size=13, weight="bold"),
+                      progress_color="#2d8a4e").pack(anchor="w", padx=10, pady=(10, 4))
+
+        api_row = ctk.CTkFrame(ai_frame, fg_color="transparent")
+        api_row.pack(fill="x", padx=10, pady=(0, 4))
+        ctk.CTkLabel(api_row, text="API Anahtarı:", font=ctk.CTkFont(size=13)).pack(side="left", padx=(0, 6))
+        self.api_var = ctk.StringVar(value=self.app.config.get("gemini_api_key", ""))
+        ctk.CTkEntry(api_row, textvariable=self.api_var, width=320, show="*").pack(side="left", padx=(0, 4))
+        
+        link_btn = ctk.CTkButton(api_row, text="Ücretsiz Anahtar Al", width=120,
+                      fg_color="transparent", border_width=1, text_color="#58a6ff",
+                      command=lambda: webbrowser.open("https://aistudio.google.com/app/apikey"))
+        link_btn.pack(side="left")
+
         # ── Kaydet ──
         ctk.CTkButton(self, text="💾 Ayarları Kaydet", command=self._save_settings,
                       height=36, font=ctk.CTkFont(size=14, weight="bold"),
@@ -223,6 +249,8 @@ class SettingsTab(ctk.CTkFrame):
         self.app.config.set_many({
             "scan_disks": disks, "appdata_subdirs": appdata,
             "backup_target": self.target_var.get(),
+            "use_ai_analyzer": self.ai_var.get(),
+            "gemini_api_key": self.api_var.get().strip(),
         })
         messagebox.showinfo("Başarılı", "Ayarlar kaydedildi!")
         self.app.status_bar.set_text("Ayarlar kaydedildi")

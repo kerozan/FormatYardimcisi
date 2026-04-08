@@ -6,6 +6,7 @@ import threading
 import datetime
 import customtkinter as ctk
 from ui.widgets import LogPanel, ProgressFrame
+from ai_analyzer import AIAnalyzer
 
 
 class ScanTab(ctk.CTkFrame):
@@ -145,10 +146,25 @@ class ScanTab(ctk.CTkFrame):
             # Lisans bilgilerini al
             licenses = self.app.license_mgr.get_all() if hasattr(self.app, "license_mgr") else None
 
+            # AI Analiz (Aktifse)
+            ai_report = None
+            if self.app.config.get("use_ai_analyzer"):
+                api_key = self.app.config.get("gemini_api_key", "").strip()
+                self.after(0, lambda: self.log.log("\n🤖 AI Analizör devrede. Gemini'ye bağlanılıyor... (Bu işlem ~10 sn sürebilir)"))
+                analyzer = AIAnalyzer(api_key)
+                if analyzer.is_ready:
+                    try:
+                        ai_report = analyzer.analyze(results)
+                        self.after(0, lambda: self.log.log("✅ AI: Veriler başarıyla analiz edildi, detaylı JSON alındı."))
+                    except Exception as e:
+                        self.after(0, lambda e=e: self.log.log(f"⚠️ AI Analiz Çöktü: {str(e)} (Statik analize dönülüyor)"))
+                else:
+                    self.after(0, lambda: self.log.log("⚠️ AI Analiz başarısız: google-genai yüklü değil veya API Key geçersiz."))
+
             # Otomatik rehber ve CSV oluştur
             self.after(0, lambda: self.log.log("\n📄 Rehber ve CSV otomatik oluşturuluyor..."))
 
-            gen_args = dict(licenses=licenses, startup_programs=startup_progs)
+            gen_args = dict(licenses=licenses, startup_programs=startup_progs, ai_report=ai_report)
             # Markdown rehber
             content = self.app.guide_gen.generate(results, diff, **gen_args)
             guide_path = self.app.guide_gen.save(content)

@@ -4,7 +4,7 @@
 import json
 import os
 
-VERSION = "2.1.0"
+VERSION = "3.0.0"
 APP_NAME = "Format Yardımcısı"
 
 
@@ -24,6 +24,8 @@ class ConfigManager:
         "last_scan_date": None,
         "last_backup_date": None,
         "last_restore_date": None,
+        "gemini_api_key": "",
+        "use_ai_analyzer": False,
     }
 
     def __init__(self, data_dir):

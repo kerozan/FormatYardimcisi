@@ -110,7 +110,7 @@ class GuideGenerator:
         return ""
 
     # ── Veri Toplama ───────────────────────────────────────────────
-    def _collect_data(self, scan_results, diff=None, licenses=None, startup_programs=None):
+    def _collect_data(self, scan_results, diff=None, licenses=None, startup_programs=None, ai_report=None):
         """Tüm bölümler için veriyi toplar — hem MD hem HTML kullanır."""
         folder_progs = scan_results.get("folder_programs", [])
         reg_progs = scan_results.get("registry_programs", [])
@@ -130,12 +130,13 @@ class GuideGenerator:
             "scan_date": scan_date, "c_disk": c_disk, "other_disk": other_disk,
             "important": important, "cleanup": cleanup, "total_gb": total_gb,
             "diff": diff, "licenses": licenses, "startup_programs": startup_programs,
+            "ai_report": ai_report,
         }
 
     # ── MARKDOWN ───────────────────────────────────────────────────
-    def generate(self, scan_results, diff=None, licenses=None, startup_programs=None):
+    def generate(self, scan_results, diff=None, licenses=None, startup_programs=None, ai_report=None):
         """Tam format rehberini markdown olarak oluşturur."""
-        d = self._collect_data(scan_results, diff, licenses, startup_programs)
+        d = self._collect_data(scan_results, diff, licenses, startup_programs, ai_report)
         lines = []
 
         lines.append("# 🖥️ C Diski Format Öncesi Yedekleme ve Kurulum Rehberi")
@@ -143,6 +144,38 @@ class GuideGenerator:
         lines.append(f"> Tarih: {d['scan_date']} | {len(d['reg_progs'])} registry programı"
                      f" + {len(d['folder_progs'])} klasör öğesi")
         lines.append("")
+
+        if d["ai_report"]:
+            lines.append("---")
+            lines.append("## 🤖 YAPAY ZEKA (GEMINI) ÖZEL FORMAT ANALİZİ")
+            lines.append("> Gemini AI tarafından programlarınız incelendi ve kişiye özel tavsiyeler üretildi.")
+            lines.append("")
+            
+            air = d["ai_report"]
+            if air.get("reinstall_c"):
+                lines.append("### 🔴 Sil Baştan Kurulması Şart Olanlar")
+                rows = [(p["name"], p["reason"]) for p in air["reinstall_c"]]
+                lines.extend(_md_table(["Program Adı", "Teknik Gerekçe"], rows))
+                lines.append("")
+                
+            if air.get("safe_other_disks"):
+                lines.append("### 🟢 Başka Diskte Güvende (Portable / Kütüphane)")
+                rows = [(p["name"], p.get("disk", "?"), p["reason"]) for p in air["safe_other_disks"]]
+                lines.extend(_md_table(["Oyun / Program", "Disk", "AI Önerisi"], rows))
+                lines.append("")
+                
+            if air.get("backup_appdata"):
+                lines.append("### 💾 Ayarları AppData'dan Yedeklenmesi Gerekenler")
+                rows = [(p["name"], p["reason"]) for p in air["backup_appdata"]]
+                lines.extend(_md_table(["Uygulama/Klasör Adı", "Önemi"], rows))
+                lines.append("")
+                
+            if air.get("cleanup_junk"):
+                lines.append("### 🗑️ Gereksiz (AI ile Tespit Edildi)")
+                rows = [(p["name"], p["reason"]) for p in air["cleanup_junk"]]
+                lines.extend(_md_table(["Öğe", "Silme Nedeni"], rows))
+                lines.append("")
+
 
         # Değişiklik Özeti
         if d["diff"]:
@@ -292,15 +325,36 @@ class GuideGenerator:
         return "\n".join(lines)
 
         # ── HTML ───────────────────────────────────────────────────────
-    def generate_html(self, scan_results, diff=None, licenses=None, startup_programs=None):
+    def generate_html(self, scan_results, diff=None, licenses=None, startup_programs=None, ai_report=None):
         """Rehberin HTML versiyonunu oluşturur."""
-        d = self._collect_data(scan_results, diff, licenses, startup_programs)
+        d = self._collect_data(scan_results, diff, licenses, startup_programs, ai_report)
         sections = []
         nav_links = []
 
         def _add_section(id_name, nav_text, html_card):
             nav_links.append(f'<a href="#{id_name}">{nav_text}</a>')
             sections.append(f'<div id="{id_name}">{html_card}</div>')
+
+        # Yapay Zeka AI Report
+        if d["ai_report"]:
+            air = d["ai_report"]
+            ai_html = ""
+            if air.get("reinstall_c"):
+                rows = "".join(f"<tr><td>{p['name']}</td><td>{p['reason']}</td></tr>" for p in air["reinstall_c"])
+                ai_html += f"<h4>🔴 Kurulması Şart Olanlar</h4><table><thead><tr><th>Program</th><th>Neden?</th></tr></thead><tbody>{rows}</tbody></table><br>"
+            if air.get("safe_other_disks"):
+                rows = "".join(f"<tr><td>{p['name']}</td><td>{p.get('disk','?')}</td><td>{p['reason']}</td></tr>" for p in air["safe_other_disks"])
+                ai_html += f"<h4>🟢 Diğer Diskte/Taşınabilir</h4><table><thead><tr><th>Uygulama</th><th>Disk</th><th>Öneri</th></tr></thead><tbody>{rows}</tbody></table><br>"
+            if air.get("backup_appdata"):
+                rows = "".join(f"<tr><td>{p['name']}</td><td>{p['reason']}</td></tr>" for p in air["backup_appdata"])
+                ai_html += f"<h4>💾 Ayarları Kurtarılması Gerekenler</h4><table><thead><tr><th>Uygulama</th><th>Açıklama</th></tr></thead><tbody>{rows}</tbody></table><br>"
+            if air.get("cleanup_junk"):
+                rows = "".join(f"<tr><td>{p['name']}</td><td>{p['reason']}</td></tr>" for p in air["cleanup_junk"])
+                ai_html += f"<h4>🗑️ Çöp Dosyalar</h4><table><thead><tr><th>Klasör</th><th>Sebep</th></tr></thead><tbody>{rows}</tbody></table>"
+                
+            card = self._html_card("🤖 YAPAY ZEKA (GEMINI) ÖZEL FORMAT ANALİZİ", "Kişiye Özel Akıllı Rapor",
+                f"<p style='margin-bottom:10px;color:#8b949e'>Yapay Zeka tarafından bilgisayarın tarandı ve sana özel format stratejisi çıkarıldı.</p>" + ai_html)
+            _add_section("ai_report", "🤖 Yapay Zeka Analizi", card)
 
         # Değişiklikler
         if d["diff"]:

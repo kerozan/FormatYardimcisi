@@ -1,0 +1,85 @@
+import json
+import re
+
+class AIAnalyzer:
+    """Google Gemini AI kullanarak format öncesi program analizi yapar."""
+
+    SYSTEM_PROMPT = """Sen uzman bir Windows Sistem Mühendisi ve Format Öncesi Analistisin. 
+Sana JSON formatında kullanıcının bilgisayarına ait kurulu programlar verilecek.
+Kullanıcı C diskini formatlayıp Windows'u baştan kuracak. C diski SİLİNECEK. Diğer diskler (örn: D:, E:) YERİNDE KALACAK.
+
+Gelen bu program listesini incele ve aşağıdaki JSON formatında bir format rehberi/raporu oluştur:
+
+{
+  "reinstall_c": [
+    {"name": "Program Adı", "reason": "Neden yeniden kurulması şart? (örn: Registry, Driver bağımlı)"}
+  ],
+  "safe_other_disks": [
+    {"name": "Program/Oyun Adı", "disk": "D", "reason": "Bunu silmene gerek yok, sadece kütüphane yolunu göster."}
+  ],
+  "backup_appdata": [
+    {"name": "Klasör Adı", "reason": "Verileri format öncesi yedeklemelisin, çünkü save dosyaları burada."}
+  ],
+  "cleanup_junk": [
+    {"name": "Klasör Adı", "reason": "Gereksiz çöp doasyalar, yedeklenmesine gerek yok."}
+  ]
+}
+
+Sadece teknik olarak gerçekten önemli ve dikkat çeken 30 programı analiz et.
+Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
+"""
+
+    def __init__(self, api_key):
+        try:
+            from google import genai
+            self.client = genai.Client(api_key=api_key)
+            self._is_ready = True
+        except ImportError:
+            self.client = None
+            self._is_ready = False
+            print("google-genai kütüphanesi bulunamadı.")
+
+    @property
+    def is_ready(self):
+        return self._is_ready and self.client is not None
+
+    def analyze(self, scan_results):
+        """Tarama sonuçlarını AI'a gönderir ve JSON rapor döndürür."""
+        if not self.is_ready:
+            raise RuntimeError("Gemini API hazır değil. Lütfen geçerli bir API Anahtarı girin.")
+
+        # Sadece analiz için gerekenleri sıkıştır (Token tasarrufu)
+        compact_data = {
+            "registry": [p["program_adi"] for p in scan_results.get("registry_programs", [])],
+            "folders": [
+                {"n": p["program_adi"], "path": p.get("kurulum_yolu", ""), "mb": p.get("boyut_mb", 0)} 
+                for p in scan_results.get("folder_programs", [])
+                # Sadece büyük / önemli klasörleri gönderelim
+                if p["boyut_mb"] > 10 or "AppData" in p.get("kurulum_yolu", "")
+            ]
+        }
+
+        user_content = json.dumps(compact_data, ensure_ascii=False)
+
+        prompt = f"{self.SYSTEM_PROMPT}\n\nKULLANICI VERİSİ:\n{user_content}"
+        
+        try:
+            response = self.client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt
+            )
+            
+            # Markdown veya json codeblock'ları temizle
+            text = response.text.strip()
+            if text.startswith("```json"):
+                text = text[7:]
+            elif text.startswith("```"):
+                text = text[3:]
+                
+            if text.endswith("```"):
+                text = text[:-3]
+                
+            return json.loads(text.strip())
+
+        except Exception as e:
+            raise Exception(f"AI Analiz Hatası: {str(e)}")
