@@ -162,6 +162,7 @@ class ProgramScanner:
         self._stop_flag.clear()
         results = {
             "scan_date": datetime.datetime.now().isoformat(),
+            "scanned_disks": disks,
             "folder_programs": [],
             "registry_programs": [],
         }

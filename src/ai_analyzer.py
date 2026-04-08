@@ -4,31 +4,6 @@ import re
 class AIAnalyzer:
     """Google Gemini AI kullanarak format öncesi program analizi yapar."""
 
-    SYSTEM_PROMPT = """Sen uzman bir Windows Sistem Mühendisi ve Format Öncesi Analistisin. 
-Sana JSON formatında kullanıcının bilgisayarına ait kurulu programlar verilecek.
-Kullanıcı C diskini formatlayıp Windows'u baştan kuracak. C diski SİLİNECEK. Diğer diskler (örn: D:, E:) YERİNDE KALACAK.
-
-Gelen bu program listesini incele ve aşağıdaki JSON formatında bir format rehberi/raporu oluştur:
-
-{
-  "reinstall_c": [
-    {"name": "Program Adı", "reason": "Neden yeniden kurulması şart? (örn: Registry, Driver bağımlı)"}
-  ],
-  "safe_other_disks": [
-    {"name": "Program/Oyun Adı", "disk": "D", "reason": "Bunu silmene gerek yok, sadece kütüphane yolunu göster."}
-  ],
-  "backup_appdata": [
-    {"name": "Klasör Adı", "reason": "Verileri format öncesi yedeklemelisin, çünkü save dosyaları burada."}
-  ],
-  "cleanup_junk": [
-    {"name": "Klasör Adı", "reason": "Gereksiz çöp doasyalar, yedeklenmesine gerek yok."}
-  ]
-}
-
-Sadece teknik olarak gerçekten önemli ve dikkat çeken 30 programı analiz et.
-Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
-"""
-
     def __init__(self, api_key):
         try:
             from google import genai
@@ -59,9 +34,39 @@ Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
             ]
         }
 
+        # Dinamik System Prompt Oluştur
+        disks = scan_results.get("scanned_disks", ["C"])
+        other_disks = [d for d in disks if d != "C"]
+        other_disk_str = ", ".join(f"{d}:" for d in other_disks) if other_disks else "YOK (Sadece C diski taranmış, hepsi gidecek)"
+
+        system_prompt = f"""Sen uzman bir Windows Sistem Mühendisi ve Format Öncesi Analistisin. 
+Sana JSON formatında kullanıcının bilgisayarına ait kurulu programlar verilecek.
+Kullanıcı C diskini formatlayıp Windows'u baştan kuracak. C diski SİLİNECEK. Kullanıcının koruduğu ve formattan sonra YERİNDE KALACAK diğer diskler şunlardır: {other_disk_str}
+
+Gelen bu program listesini incele ve aşağıdaki JSON formatında bir format rehberi/raporu oluştur:
+
+{{
+  "reinstall_c": [
+    {{"name": "Program Adı", "reason": "Neden yeniden kurulması şart? (örn: Registry, Driver bağımlı)"}}
+  ],
+  "safe_other_disks": [
+    {{"name": "Program/Oyun Adı", "disk": "Bulunduğu Disk Harfi", "reason": "Bunu silmene gerek yok, sadece kütüphane yolunu göster."}}
+  ],
+  "backup_appdata": [
+    {{"name": "Klasör Adı", "reason": "Verileri format öncesi yedeklemelisin, çünkü save/config dosyaları burada."}}
+  ],
+  "cleanup_junk": [
+    {{"name": "Klasör Adı", "reason": "Gereksiz çöp dosyalar, yedeklenmesine gerek yok."}}
+  ]
+}}
+
+Sadece teknik olarak gerçekten önemli ve dikkat çeken MAX 30 programı analiz et.
+Cevabın YALNIZCA geçerli bir JSON objesi olmalıdır. Ekstra metin ekleme.
+"""
+
         user_content = json.dumps(compact_data, ensure_ascii=False)
 
-        prompt = f"{self.SYSTEM_PROMPT}\n\nKULLANICI VERİSİ:\n{user_content}"
+        prompt = f"{system_prompt}\n\nKULLANICI VERİSİ:\n{user_content}"
         
         try:
             response = self.client.models.generate_content(
