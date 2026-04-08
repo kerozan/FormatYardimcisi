@@ -1,5 +1,5 @@
 @echo off
-title Format Yardimcisi v1.0.0
+title Format Yardimcisi v2.1.0
 cd /d "%~dp0"
 py -3 src\main.py
 if %errorlevel% neq 0 (

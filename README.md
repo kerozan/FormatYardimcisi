@@ -1,4 +1,4 @@
-# Format Yardımcısı v2.0.0
+# Format Yardımcısı v2.1.0
 
 Windows 10 format öncesi/sonrası süreçleri yöneten, şık arayüzlü Python masaüstü uygulaması.
 
@@ -16,6 +16,12 @@ Windows 10 format öncesi/sonrası süreçleri yöneten, şık arayüzlü Python
 - Her çalıştırmada önceki tarama ile karşılaştırır → yeni/kaldırılan programları gösterir
 - CSV, Markdown ve şık HTML rapor çıktılarını otomatik üretir
 
+### 🔧 Sürücü Yedekleme
+
+- `pnputil` ile 3. parti (Microsoft dışı) sürücüleri tarar
+- Sürücüleri tek tıkla hedef klasöre dışa aktarır (`_drivers/` alt klasörü)
+- Format sonrası hangi sürücülerin yeniden kurulacağını rehberde listeler
+
 ### 💾 Data Yedekleme
 
 - **Incremental:** Sadece yeni/değişen dosyaları kopyalar
@@ -25,6 +31,12 @@ Windows 10 format öncesi/sonrası süreçleri yöneten, şık arayüzlü Python
 - Önerilen klasörler + AI yapılandırma klasörleri (Gemini, Claude, ChatGPT)
 - Disk alanı kontrolü ve yetersizlik uyarısı
 - Güvenli durdurma (atomik kopyalama, dosya yarım kalmaz)
+
+### 📊 Yedek Karşılaştırma
+
+- İki yedek manifest'i arasındaki farkları renk kodlu gösterir
+- 🟢 Yeni / 🔴 Silinen / 🟡 Değişen dosyalar ayrı ayrı listelenir
+- Karşılaştırma sonuçlarını HTML rapor olarak dışa aktarır
 
 ### 🔄 Geri Yükleme
 
@@ -43,6 +55,7 @@ Windows 10 format öncesi/sonrası süreçleri yöneten, şık arayüzlü Python
 - 50+ program için otomatik indirme linkleri
 - Lisans anahtarları rehbere dahil
 - Başlangıç programları listesi
+- 3. parti sürücü tablosu
 - Kategorize: Güvende / Yeniden Kurulacak / Yedekle / Temizlenebilir
 
 ## Kurulum
@@ -79,8 +92,10 @@ kurulu_programlar_listele/
 ├── src/
 │   ├── main.py           → Giriş noktası
 │   ├── app.py            → Ana GUI penceresi
-│   ├── scanner.py        → Program + başlangıç tarama
+│   ├── scanner.py        → Program + başlangıç + sürücü tarama
+│   ├── driver_scanner.py → Sürücü tarama ve dışa aktarma
 │   ├── backup_engine.py  → Yedekleme motoru (normal + ZIP)
+│   ├── backup_diff.py    → Yedek karşılaştırma motoru
 │   ├── restore_engine.py → Geri yükleme motoru
 │   ├── guide_generator.py→ Rehber (MD + HTML)
 │   ├── html_reporter.py  → Şık HTML Yedekleme raporları
@@ -92,6 +107,7 @@ kurulu_programlar_listele/
 │       ├── scan_tab.py   → Tarama sekmesi
 │       ├── backup_tab.py → Yedekleme sekmesi
 │       ├── restore_tab.py→ Geri yükleme sekmesi
+│       ├── diff_tab.py   → Karşılaştırma sekmesi
 │       └── settings_tab.py→ Ayarlar + Lisans
 ├── cikti/                → HTML raporlar, CSV + MD rehberi
 └── data/                 → Ayarlar + tarama + lisans + boyut cache
