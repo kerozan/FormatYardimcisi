@@ -1,0 +1,10 @@
+@echo off
+title Format Yardimcisi v1.0.0
+cd /d "%~dp0"
+py -3 src\main.py
+if %errorlevel% neq 0 (
+    echo.
+    echo [HATA] Uygulama baslatılamadı. Python veya customtkinter kurulu mu?
+    echo Kurmak icin: pip install customtkinter
+    pause
+)

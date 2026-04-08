@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Data klasörü içeriğini yoksay ama klasörü koru
+data/*
+!data/.gitkeep
+
+# Çıktı klasörü içeriğini yoksay ama klasörü koru
+cikti/*
+!cikti/.gitkeep
+
+*.tmp
+*.bak
+.env
