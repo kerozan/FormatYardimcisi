@@ -85,7 +85,17 @@ Miktar limitin yoktur; gerçekten önemliyse 100 tane bile yazabilirsin. Cevabı
             if text.endswith("```"):
                 text = text[:-3]
                 
-            return json.loads(text.strip())
+            json_data = json.loads(text.strip())
+            
+            # Token istatistikleri
+            if hasattr(response, "usage_metadata") and response.usage_metadata:
+                json_data["_token_stats"] = {
+                    "prompt": getattr(response.usage_metadata, "prompt_token_count", 0),
+                    "candidates": getattr(response.usage_metadata, "candidates_token_count", 0),
+                    "total": getattr(response.usage_metadata, "total_token_count", 0)
+                }
+                
+            return json_data
 
         except Exception as e:
             raise Exception(f"AI Analiz Hatası: {str(e)}")

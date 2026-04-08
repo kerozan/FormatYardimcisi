@@ -155,7 +155,14 @@ class ScanTab(ctk.CTkFrame):
                 if analyzer.is_ready:
                     try:
                         ai_report = analyzer.analyze(results)
-                        self.after(0, lambda: self.log.log("✅ AI: Veriler başarıyla analiz edildi, detaylı JSON alındı."))
+                        tokens = ai_report.pop("_token_stats", None) if isinstance(ai_report, dict) else None
+                        
+                        if tokens:
+                            msg = f"✅ AI: Veriler analiz edildi. (Harcanan Token: Girdi {tokens.get('prompt', 0)} | Çıktı {tokens.get('candidates', 0)} | Toplam {tokens.get('total', 0)})"
+                            self.after(0, lambda m=msg: self.log.log(m))
+                        else:
+                            self.after(0, lambda: self.log.log("✅ AI: Veriler başarıyla analiz edildi, detaylı JSON alındı."))
+                            
                     except Exception as e:
                         self.after(0, lambda e=e: self.log.log(f"⚠️ AI Analiz Çöktü: {str(e)} (Statik analize dönülüyor)"))
                 else:
