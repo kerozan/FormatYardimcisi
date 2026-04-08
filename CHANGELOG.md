@@ -2,6 +2,22 @@
 
 # Değişiklik Günlüğü (Changelog)
 
+## v2.1.0 (2026-04-09)
+
+### Yeni Özellikler
+
+- 🔧 Sürücü yedekleme: pnputil ile 3. parti sürücüleri tarama ve dışa aktarma
+- 📊 Yedek karşılaştırma (diff viewer): iki yedek arasındaki farkları renk kodlu gösterme
+- 📄 Karşılaştırma sonuçlarını HTML olarak dışa aktarma
+- 🔧 Rehbere "Yüklü Sürücüler" bölümü eklendi
+- 💾 Yedekleme sekmesine "Sürücüleri Dışa Aktar" butonu eklendi
+- 📊 Yeni "Karşılaştırma" sekmesi eklendi
+
+### İyileştirmeler
+
+- Tarama artık sürücüleri de tarıyor ve özet bilgiye dahil ediyor
+- Rehber (MD + HTML) sürücü tablosu içeriyor
+
 ## v2.0.0 (2026-04-08)
 
 ### Yeni Özellikler
@@ -20,12 +36,6 @@
 - Uygulama açıldığında önceki boyutlar anında görüntüleniyor
 - Rehberde indirme linkleri ile hızlı kurulum desteği
 - Tarayıcı açıkken yapılan kilitli dosya bildirimleri ve uygulamayı nazikçe kapatma seçeneği eklendi
-
-### Planlanan (Gelecek Sürümler)
-
-- DriverStore sürücü taraması
-- Google Drive entegrasyonu
-- Yedekleme karşılaştırma (diff viewer)
 
 ## v1.1.0 (2026-04-08)
 

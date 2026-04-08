@@ -156,9 +156,12 @@ class ScanTab(ctk.CTkFrame):
 
         folder_count = len(results.get("folder_programs", []))
         reg_count = len(results.get("registry_programs", []))
+        drv_count = len(results.get("drivers", []))
         total_gb = sum(p["boyut_mb"] for p in results.get("folder_programs", [])) / 1024
 
         summary = f"📊 {reg_count} registry programı + {folder_count} klasör öğesi | {total_gb:.1f} GB"
+        if drv_count:
+            summary += f" | 🔧 {drv_count} sürücü"
 
         new_list = diff.get("new", [])
         rem_list = diff.get("removed", [])

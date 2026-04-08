@@ -157,6 +157,13 @@ class BackupTab(ctk.CTkFrame):
             btn_row, text="", font=ctk.CTkFont(size=11), text_color="gray60")
         self.lbl_inspect_status.pack(side="left")
 
+        # Sürücü dışa aktar butonu
+        self.btn_drivers = ctk.CTkButton(
+            btn_row, text="🔧 Sürücüleri Dışa Aktar", command=self._start_driver_export,
+            height=30, font=ctk.CTkFont(size=12),
+            fg_color="#7d3c98", hover_color="#6c3483")
+        self.btn_drivers.pack(side="right")
+
         # ── Kontrol Butonları ──
         ctrl_frame = ctk.CTkFrame(self, fg_color="transparent")
         ctrl_frame.pack(fill="x", padx=10, pady=4)
@@ -560,3 +567,50 @@ class BackupTab(ctk.CTkFrame):
                 pass
 
         time.sleep(1)
+
+    # ── Sürücü Dışa Aktarma ────────────────────────────────────────
+    def _start_driver_export(self):
+        """Sürücüleri tarayıp hedef klasöre dışa aktarır."""
+        target = self.target_var.get().strip()
+        if not target:
+            messagebox.showwarning("Uyarı", "Yedekleme hedef klasörü belirtilmedi!")
+            return
+
+        self.btn_drivers.configure(state="disabled")
+        self.log.log("\n🔧 Sürücüler taranıyor...")
+        self.progress.reset("🔧 Sürücü taraması...")
+        self.app.status_bar.set_text("Sürücü dışa aktarma devam ediyor...")
+
+        thread = threading.Thread(target=self._driver_export_worker, args=(target,), daemon=True)
+        thread.start()
+
+    def _driver_export_worker(self, target_dir):
+        """Arka planda sürücü tara + export."""
+        from driver_scanner import DriverScanner
+
+        scanner = DriverScanner()
+
+        # Önce tara
+        def scan_cb(msg):
+            self.after(0, self.log.log, msg)
+
+        drivers = scanner.scan_drivers(callback=scan_cb)
+
+        if not drivers:
+            self.after(0, self.log.log, "⚠️ Üçüncü parti sürücü bulunamadı.")
+            self.after(0, self.btn_drivers.configure, {"state": "normal"})
+            self.after(0, self.app.status_bar.set_text, "Sürücü tara— bulunamadı")
+            return
+
+        self.after(0, self.log.log, f"\n📦 {len(drivers)} sürücü dışa aktarılıyor...")
+
+        def progress_cb(cur, total, msg):
+            self.after(0, self.progress.update_progress, cur, total, msg)
+            self.after(0, self.log.log, msg)
+
+        summary, export_dir = scanner.export_drivers(drivers, target_dir, progress_cb=progress_cb)
+
+        self.after(0, self.log.log, summary)
+        self.after(0, self.btn_drivers.configure, {"state": "normal"})
+        self.after(0, self.app.status_bar.set_text,
+                   f"Sürücü dışa aktarma tamamlandı — {export_dir}")

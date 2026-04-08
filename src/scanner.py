@@ -218,6 +218,19 @@ class ProgramScanner:
             if callback:
                 callback(f"Registry taraması: {len(results['registry_programs'])} program bulundu.")
 
+        # Sürücü tarama
+        if not self._stop_flag.is_set():
+            if callback:
+                callback("\nSürücüler taranıyor...")
+            try:
+                from driver_scanner import DriverScanner
+                drv_scanner = DriverScanner()
+                results["drivers"] = drv_scanner.scan_drivers(callback)
+            except Exception as e:
+                if callback:
+                    callback(f"⚠️ Sürücü taraması atlandı: {e}")
+                results["drivers"] = []
+
         return results
 
     # ── Karşılaştırma ──────────────────────────────────────────────

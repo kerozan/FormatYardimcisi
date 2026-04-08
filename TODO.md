@@ -34,10 +34,10 @@
 - [x] Lisanslar rehbere dahil
 - [x] Yedekleme raporları (HTML)
 
-## v2.1.0 (Planlanan)
+## v2.1.0 ✅ (Mevcut)
 
-- [ ] Sürücü yedekleme önerisi (DriverStore)
-- [ ] Yedekleme karşılaştırma (diff viewer)
+- [x] Sürücü yedekleme önerisi (DriverStore)
+- [x] Yedekleme karşılaştırma (diff viewer)
 
 ## v3.0.0 (Planlanan)
 

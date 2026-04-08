@@ -114,6 +114,7 @@ class GuideGenerator:
         """Tüm bölümler için veriyi toplar — hem MD hem HTML kullanır."""
         folder_progs = scan_results.get("folder_programs", [])
         reg_progs = scan_results.get("registry_programs", [])
+        drivers = scan_results.get("drivers", [])
         scan_date = scan_results.get("scan_date", datetime.datetime.now().isoformat())[:10]
 
         c_disk = [p for p in reg_progs if self._is_on_c(p)]
@@ -125,6 +126,7 @@ class GuideGenerator:
 
         return {
             "folder_progs": folder_progs, "reg_progs": reg_progs,
+            "drivers": drivers,
             "scan_date": scan_date, "c_disk": c_disk, "other_disk": other_disk,
             "important": important, "cleanup": cleanup, "total_gb": total_gb,
             "diff": diff, "licenses": licenses, "startup_programs": startup_programs,
@@ -256,6 +258,22 @@ class GuideGenerator:
         lines.append("7. **Diğer programlar** — İhtiyaç oldukça kur")
         lines.append("")
 
+        # Sürücüler
+        if d["drivers"]:
+            lines.append("---")
+            lines.append("")
+            lines.append(f"## 🔧 YÜKLÜ SÜRÜCÜLER (3. Parti)")
+            lines.append("")
+            lines.append("Format sonrası bu sürücülerin yeniden kurulması gerekebilir:")
+            lines.append("")
+            rows = [
+                (drv["provider"], drv.get("class_name", ""), drv.get("version", ""),
+                 drv.get("date", ""), drv.get("inf_name", ""))
+                for drv in d["drivers"]
+            ]
+            lines.extend(_md_table(["Sağlayıcı", "Sınıf", "Versiyon", "Tarih", "INF"], rows))
+            lines.append("")
+
         # Özet
         lines.append("---")
         lines.append("")
@@ -367,6 +385,20 @@ class GuideGenerator:
             "<li><strong>Kütüphaneleri göster</strong> — Diğer disklerdeki klasörleri ekle</li>"
             "<li><strong>Diğer programlar</strong> — İhtiyaç oldukça kur</li>"
             "</ol>"))
+
+        # Sürücüler
+        if d["drivers"]:
+            rows = ""
+            for drv in d["drivers"]:
+                rows += (f"<tr><td>{drv['provider']}</td>"
+                         f"<td>{drv.get('class_name','')}</td>"
+                         f"<td>{drv.get('version','')}</td>"
+                         f"<td>{drv.get('date','')}</td>"
+                         f"<td class='mono'>{drv.get('inf_name','')}</td></tr>")
+            sections.append(self._html_card("🔧 Yüklü Sürücüler (3. Parti)",
+                f"{len(d['drivers'])} sürücü",
+                f"<table><thead><tr><th>Sağlayıcı</th><th>Sınıf</th><th>Versiyon</th><th>Tarih</th><th>INF</th></tr></thead>"
+                f"<tbody>{rows}</tbody></table>"))
 
         content = "\n".join(sections)
 

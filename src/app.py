@@ -9,10 +9,12 @@ from config_manager import ConfigManager, VERSION, APP_NAME
 from scanner import ProgramScanner
 from guide_generator import GuideGenerator
 from license_manager import LicenseManager
+from driver_scanner import DriverScanner
 from ui.widgets import StatusBar
 from ui.scan_tab import ScanTab
 from ui.backup_tab import BackupTab
 from ui.restore_tab import RestoreTab
+from ui.diff_tab import DiffTab
 from ui.settings_tab import SettingsTab
 
 
@@ -38,6 +40,7 @@ class FormatYardimcisiApp(ctk.CTk):
         self.scanner = ProgramScanner(self.data_dir, self.output_dir)
         self.guide_gen = GuideGenerator(self.output_dir)
         self.license_mgr = LicenseManager(self.data_dir)
+        self.driver_scanner = DriverScanner()
 
         # ── Pencere Ayarları ──
         self.title(f"{APP_NAME} v{VERSION}")
@@ -86,6 +89,7 @@ class FormatYardimcisiApp(ctk.CTk):
         tab_scan = self.tabview.add("📋 Tarama")
         tab_backup = self.tabview.add("💾 Yedekleme")
         tab_restore = self.tabview.add("🔄 Geri Yükleme")
+        tab_diff = self.tabview.add("📊 Karşılaştırma")
         tab_settings = self.tabview.add("⚙️ Ayarlar")
 
         # ── Sekme İçerikleri ──
@@ -97,6 +101,9 @@ class FormatYardimcisiApp(ctk.CTk):
 
         self.restore_tab = RestoreTab(tab_restore, app_ref=self)
         self.restore_tab.pack(fill="both", expand=True)
+
+        self.diff_tab = DiffTab(tab_diff, app_ref=self)
+        self.diff_tab.pack(fill="both", expand=True)
 
         self.settings_tab = SettingsTab(tab_settings, app_ref=self)
         self.settings_tab.pack(fill="both", expand=True)
