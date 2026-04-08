@@ -15,12 +15,18 @@ class DriverScanner:
 
     def _decode_console(self, raw_bytes):
         """Konsol çıktısını Türkçe Windows sistemlere uygun çözer."""
-        for enc in ['cp857', 'cp1254', 'utf-8']:
+        import locale
+        encs = [locale.getpreferredencoding(False), 'cp1254', 'cp857', 'utf-8']
+        for enc in encs:
+            if not enc: continue
             try:
-                return raw_bytes.decode(enc)
-            except UnicodeDecodeError:
+                decoded = raw_bytes.decode(enc)
+                # Eğer kodlama başarılıysa ancak içinde bozuk karakter () varsa diğerine geç
+                if '\ufffd' not in decoded:
+                    return decoded
+            except (UnicodeDecodeError, LookupError):
                 continue
-        return raw_bytes.decode('utf-8', errors='replace')
+        return raw_bytes.decode('cp1254', errors='replace')
 
     def stop(self):
         self._stop_flag.set()

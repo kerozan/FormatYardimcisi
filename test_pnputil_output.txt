@@ -1,0 +1,1274 @@
+Microsoft PnP Utility
+
+Published Name:     oem81.inf
+Original Name:      amdtools.inf
+Provider Name:      Advanced Micro Devices
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     05/27/2020 1.7.16.218
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem57.inf
+Original Name:      amustor.inf
+Provider Name:      Alcor Micro, Corp.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     04/26/2018 2.0.149.10100
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem79.inf
+Original Name:      appleusb.inf
+Provider Name:      Apple, Inc.
+Class Name:         Evrensel Seri Yol cihazlarý
+Class GUID:         {88bae032-5a81-49f0-bc3d-a4ff138216d6}
+Driver Version:     06/14/2023 538.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem128.inf
+Original Name:      ccdcmbcjsax64.inf
+Provider Name:      Samsung
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/05/2010 7.1.30.51
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem43.inf
+Original Name:      dc3du.inf
+Provider Name:      Microsoft
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/06/2015 9.9.114.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem171.inf
+Original Name:      deskingamepad.inf
+Provider Name:      Zuler (DeskIn)
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/28/2025 19.59.9.462
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem19.inf
+Original Name:      dmi_pci.inf
+Provider Name:      Intel
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/15/2006 7.0.0.1011
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem76.inf
+Original Name:      dxp_metadata_universal_driver_x64_extension.inf
+Provider Name:      HP Inc.
+Class Name:         Uzantýlar
+Class GUID:         {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Extension ID:       {1c453bf3-3cbf-45ca-9a06-a255b4290af9}
+Driver Version:     09/04/2024 1.0.0.5
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem4.inf
+Original Name:      etdsmbus.inf
+Provider Name:      ELAN SMBus
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     07/31/2020 15.21.1.21
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem27.inf
+Original Name:      flashud.inf
+Provider Name:      Intel, Corp.
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     03/06/2009 6.4.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem149.inf
+Original Name:      flashusb.inf
+Provider Name:      Intel Mobile Communications
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     02/27/2013 1.0.1.1
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem18.inf
+Original Name:      hanvonugeemfilter.inf
+Provider Name:      Hanvon Ugee Technology
+Class Name:         Fare ve diðer iþaret aygýtlarý
+Class GUID:         {4d36e96f-e325-11ce-bfc1-08002be10318}
+Driver Version:     05/25/2021 14.27.40.873
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem50.inf
+Original Name:      haswellsystem.inf
+Provider Name:      INTEL
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/02/2018 10.1.1.45
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem52.inf
+Original Name:      heci.inf
+Provider Name:      Intel
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     04/03/2018 11.7.0.1057
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem77.inf
+Original Name:      hidairmode.inf
+Provider Name:      LG Electronics Inc.
+Class Name:         Ýnsan Arabirim Cihazlarý
+Class GUID:         {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Driver Version:     08/12/2015 1.0.1508.1201
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem2.inf
+Original Name:      hpreststub.inf
+Provider Name:      Hewlett-Packard
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     05/11/2017 45.0.3868.17131
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem33.inf
+Original Name:      hpwinusbstub.inf
+Provider Name:      Hewlett-Packard
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     05/11/2017 45.0.3868.17131
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem125.inf
+Original Name:      hspusb.inf
+Provider Name:      MobileTop
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     08/18/2009 2.1.2.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem1.inf
+Original Name:      iaahci.inf
+Provider Name:      Intel Corporation
+Class Name:         Depolama denetleyicileri
+Class GUID:         {4d36e97b-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/18/2019 6.2.0.1238
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem31.inf
+Original Name:      itpcdless.inf
+Provider Name:      Microsoft
+Class Name:         Ýnsan Arabirim Cihazlarý
+Class GUID:         {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Driver Version:     10/27/2015 9.9.108.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem67.inf
+Original Name:      lxptusb.inf
+Provider Name:      Intel
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     07/31/2013 9.4.0.1025
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem65.inf
+Original Name:      lynxpointsystem.inf
+Provider Name:      INTEL
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/02/2018 10.1.1.45
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem35.inf
+Original Name:      nanorp2040connect.inf
+Provider Name:      Arduino
+Class Name:         Evrensel Seri Yol cihazlarý
+Class GUID:         {88bae032-5a81-49f0-bc3d-a4ff138216d6}
+Driver Version:     03/16/2021 10.48.0.0
+Signer Name:        Arduino SA
+
+Published Name:     oem54.inf
+Original Name:      niclavision.inf
+Provider Name:      Arduino
+Class Name:         Evrensel Seri Yol cihazlarý
+Class GUID:         {88bae032-5a81-49f0-bc3d-a4ff138216d6}
+Driver Version:     03/03/2020 10.48.0.0
+Signer Name:        Arduino SA
+
+Published Name:     oem75.inf
+Original Name:      nvppc.inf
+Provider Name:      NVIDIA
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     08/14/2024 1.52.831.832
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem25.inf
+Original Name:      nvstusb.inf
+Provider Name:      NVIDIA
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     10/27/2017 6.14.13.6904
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem44.inf
+Original Name:      nvswcfilter.inf
+Provider Name:      NVIDIA
+Class Name:         Fare ve diðer iþaret aygýtlarý
+Class GUID:         {4d36e96f-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/15/2021 8.17.3065.4007
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem53.inf
+Original Name:      nvvhci.inf
+Provider Name:      NVIDIA
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/10/2020 3.4.2785.9920
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem6.inf
+Original Name:      nvvhci.inf
+Provider Name:      NVIDIA
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/21/2022 3.5.3090.2760
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem66.inf
+Original Name:      portentah7.inf
+Provider Name:      Arduino
+Class Name:         Evrensel Seri Yol cihazlarý
+Class GUID:         {88bae032-5a81-49f0-bc3d-a4ff138216d6}
+Driver Version:     03/03/2020 10.48.0.0
+Signer Name:        Arduino AG
+
+Published Name:     oem137.inf
+Original Name:      secubus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     06/19/2009 4.52.5.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem132.inf
+Original Name:      ssadbus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem136.inf
+Original Name:      ssadsdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem144.inf
+Original Name:      ssaebus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     02/05/2010 5.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem147.inf
+Original Name:      ssaeunic.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     02/05/2010 5.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem114.inf
+Original Name:      ssbcbus.inf
+Provider Name:      Samsung Electronics Co., LTD
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     07/05/2007 4.40.7.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem104.inf
+Original Name:      sscdbus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem105.inf
+Original Name:      sscdsdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem107.inf
+Original Name:      sscebus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem109.inf
+Original Name:      sscesdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem142.inf
+Original Name:      ssdudfu.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     06/01/2011 5.28.6.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem119.inf
+Original Name:      ssecbus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem122.inf
+Original Name:      ssecobx2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem123.inf
+Original Name:      ssecsdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem124.inf
+Original Name:      ssecunic.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem103.inf
+Original Name:      ssm_bus.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/25/2009 5.12.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem101.inf
+Original Name:      ssm_ser2.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/25/2009 5.12.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem110.inf
+Original Name:      sssdbus.inf
+Provider Name:      Samsung Electronic, Co. Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     11/25/2009 5.2.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem112.inf
+Original Name:      sssdobx2.inf
+Provider Name:      Samsung Electronic, Co. Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/25/2009 5.2.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem113.inf
+Original Name:      sssdsdm2.inf
+Provider Name:      Samsung Electronic, Co. Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/25/2009 5.2.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem151.inf
+Original Name:      ssudbus.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem153.inf
+Original Name:      ssuddmgr.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem163.inf
+Original Name:      ssudmarv.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem166.inf
+Original Name:      ssudncm.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem157.inf
+Original Name:      ssudobex.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem161.inf
+Original Name:      ssudrmnet.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem164.inf
+Original Name:      ssudsdb.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem159.inf
+Original Name:      ssudserd.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem127.inf
+Original Name:      ssusbdownload.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     07/29/2008 1.1.807.29178
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem116.inf
+Original Name:      ss_bbus.inf
+Provider Name:      Samsung Electronics Co., LTD
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/19/2009 5.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem118.inf
+Original Name:      ss_bsdm2.inf
+Provider Name:      Samsung Electronics Co., LTD
+Class Name:         Baðlantý noktalarý (COM ve LPT)
+Class GUID:         {4d36e978-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/19/2009 5.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem49.inf
+Original Name:      ss_bus.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd. 
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/21/2009 5.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem165.inf
+Original Name:      ss_conn_usb_driver.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem168.inf
+Original Name:      ss_conn_usb_driver2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem32.inf
+Original Name:      type64.inf
+Provider Name:      Microsoft
+Class Name:         Klavyeler
+Class GUID:         {4d36e96b-e325-11ce-bfc1-08002be10318}
+Driver Version:     04/09/2015 9.7.132.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem36.inf
+Original Name:      unifhid.inf
+Provider Name:      Logitech
+Class Name:         Ýnsan Arabirim Cihazlarý
+Class GUID:         {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Driver Version:     08/24/2021 1.10.80.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem37.inf
+Original Name:      usbaapl64.inf
+Provider Name:      Apple, Inc.
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     05/19/2017 6.0.9999.69
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem22.inf
+Original Name:      vboxsup.inf
+Provider Name:      Oracle Corporation
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2026 7.2.6.22322
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem45.inf
+Original Name:      vboxusb.inf
+Provider Name:      Oracle Corporation
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     01/15/2026 7.2.6.22322
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem46.inf
+Original Name:      vboxusbmon.inf
+Provider Name:      Oracle Corporation
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2026 7.2.6.22322
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem139.inf
+Original Name:      via_usb_ets.inf
+Provider Name:      SAMSUNG Inc
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     10/12/2009 1.1.0.9
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem141.inf
+Original Name:      via_usb_hub.inf
+Provider Name:      SAMSUNG Inc
+Class Name:         Evrensel Seri Veri Yolu denetleyicileri
+Class GUID:         {36fc9e60-c465-11cf-8056-444553540000}
+Driver Version:     12/01/2009 2.2.11.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem69.inf
+Original Name:      wetestusbfilter.inf
+Provider Name:      Tencent WeTest
+Class Name:         Evrensel Seri Yol cihazlarý
+Class GUID:         {88bae032-5a81-49f0-bc3d-a4ff138216d6}
+Driver Version:     11/14/2023 11.36.33.666
+Signer Name:        Tencent Technology(Shenzhen) Company Limited
+
+Published Name:     oem15.inf
+Original Name:      xppentablet.inf
+Provider Name:      XPPen Technologies
+Class Name:         Ýnsan Arabirim Cihazlarý
+Class GUID:         {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Driver Version:     09/19/2023 6.1.7600.16385
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem26.inf
+Original Name:      xtuacpidriver.inf
+Provider Name:      Intel
+Class Name:         Sistem aygýtlarý
+Class GUID:         {4d36e97d-e325-11ce-bfc1-08002be10318}
+Driver Version:     07/07/2018 4.0.0.38
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem64.inf
+Original Name:      acsdrv.inf
+Provider Name:      Advanced Card Systems Ltd.
+Class Name:         Akýllý kart okuyucularý
+Class GUID:         {50dd5230-ba8a-11d1-bf5d-0000f805f530}
+Driver Version:     05/16/2018 4.2.9.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem20.inf
+Original Name:      adobepdf.inf
+Provider Name:      Adobe
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     05/28/2020 20.1.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem71.inf
+Original Name:      adobepdf.inf
+Provider Name:      Adobe
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/11/2021 21.3.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem72.inf
+Original Name:      anydeskprintdriver.inf
+Provider Name:      AnyDesk
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     12/04/2018 10.40.28.109
+Signer Name:        philandro Software GmbH
+
+Published Name:     oem148.inf
+Original Name:      c7xxphone.inf
+Provider Name:      Samsung Electronics
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     04/14/2010 4.2.407.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem129.inf
+Original Name:      ccdcmbsamx64.inf
+Provider Name:      Samsung
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/05/2010 7.1.30.51
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem130.inf
+Original Name:      ccdcmbsaox64.inf
+Provider Name:      Samsung
+Class Name:         Wireless Communication Devices
+Class GUID:         {4f919108-4adf-11d5-882d-00b0d02fe381}
+Driver Version:     02/05/2010 7.1.30.51
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem131.inf
+Original Name:      ccdcmbsax64.inf
+Provider Name:      Samsung
+Class Name:         Wireless Communication Devices
+Class GUID:         {4f919108-4adf-11d5-882d-00b0d02fe381}
+Driver Version:     02/05/2010 7.1.30.51
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem5.inf
+Original Name:      e1d.inf
+Provider Name:      Intel
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/19/2024 12.19.2.60
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem55.inf
+Original Name:      e1d.inf
+Provider Name:      Intel
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/30/2022 12.19.2.45
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem68.inf
+Original Name:      glavcam.inf
+Provider Name:      DIGI-Microscope
+Class Name:         Görüntüleme aygýtlarý
+Class GUID:         {6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Class Version:      0.2
+Driver Version:     11/06/2018 17.8.18.0
+Signer Name:        GENESYS LOGIC, INC.
+
+Published Name:     oem23.inf
+Original Name:      hdxrtgi.inf
+Provider Name:      Realtek Semiconductor Corp.
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     07/13/2021 6.0.9205.1
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem41.inf
+Original Name:      hponedriver_spd_v4_x64.inf
+Provider Name:      HP
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     08/12/2024 4.6.1.3173
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem11.inf
+Original Name:      hpwia_itw410.inf
+Provider Name:      HP
+Class Name:         Görüntüleme aygýtlarý
+Class GUID:         {6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Driver Version:     05/11/2017 45.0.4062.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem9.inf
+Original Name:      hpygid25.inf
+Provider Name:      HP
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     12/05/2017 25.100.1.7080
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem0.inf
+Original Name:      hpygid25_v4.inf
+Provider Name:      HP
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     12/05/2017 25.100.1.7080
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem16.inf
+Original Name:      igdlh64.inf
+Provider Name:      Intel Corporation
+Class Name:         Görüntü baðdaþtýrýcýlarý
+Class GUID:         {4d36e968-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/04/2020 20.19.15.5171
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem56.inf
+Original Name:      intcdaud.inf
+Provider Name:      Intel(R) Corporation
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     04/26/2018 6.16.0.3208
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem12.inf
+Original Name:      intcdaud.inf
+Provider Name:      Intel(R) Corporation
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/27/2016 8.20.0.950
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem24.inf
+Original Name:      lfunkraw.inf
+Provider Name:      Logitech
+Class Name:         DriverInterface
+Class GUID:         {d41dd63a-1395-4419-ae14-a534f5f2ad29}
+Driver Version:     10/14/2020 6.0.45.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem126.inf
+Original Name:      mbtmdm.inf
+Provider Name:      Schunid
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/06/2011 2.6.5.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem172.inf
+Original Name:      mbtun.inf
+Provider Name:      Malwarebytes
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/03/2020 1.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem96.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.6216
+Signer Name:        Microsoft Windows
+
+Published Name:     oem51.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.2486
+Signer Name:        Microsoft Windows
+
+Published Name:     oem29.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.3086
+Signer Name:        Microsoft Windows
+
+Published Name:     oem40.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.3570
+Signer Name:        Microsoft Windows
+
+Published Name:     oem80.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.5794
+Signer Name:        Microsoft Windows
+
+Published Name:     oem34.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.1806
+Signer Name:        Microsoft Windows
+
+Published Name:     oem89.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.4597
+Signer Name:        Microsoft Windows
+
+Published Name:     oem95.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.6216
+Signer Name:        Microsoft Windows
+
+Published Name:     oem38.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.4355
+Signer Name:        Microsoft Windows
+
+Published Name:     oem74.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.2788
+Signer Name:        Microsoft Windows
+
+Published Name:     oem30.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.18362.836
+Signer Name:        Microsoft Windows
+
+Published Name:     oem60.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.2673
+Signer Name:        Microsoft Windows
+
+Published Name:     oem61.inf
+Original Name:      ntprint.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/21/2006 10.0.19041.906
+Signer Name:        Microsoft Windows
+
+Published Name:     oem8.inf
+Original Name:      nvhda.inf
+Provider Name:      NVIDIA Corporation
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     08/14/2024 1.4.0.1
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem14.inf
+Original Name:      nvhda.inf
+Provider Name:      NVIDIA Corporation
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/19/2023 1.3.40.14
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem63.inf
+Original Name:      nvmoduletracker.inf
+Provider Name:      NVIDIA
+Class Name:         NvModuleTracker
+Class GUID:         {aa018edf-4915-415e-9c17-d7ebec8917d2}
+Driver Version:     05/13/2022 6.14.25214.24630
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem48.inf
+Original Name:      nvmoduletracker.inf
+Provider Name:      NVIDIA
+Class Name:         NvModuleTracker
+Class GUID:         {aa018edf-4915-415e-9c17-d7ebec8917d2}
+Driver Version:     01/30/2024 6.14.26040.64835
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem73.inf
+Original Name:      nvpcf.inf
+Provider Name:      NVIDIA
+Class Name:         Yazýlým cihazlarý
+Class GUID:         {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
+Driver Version:     08/14/2024 32.0.15.6046
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem82.inf
+Original Name:      nvvad.inf
+Provider Name:      NVIDIA
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/22/2022 4.49.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem47.inf
+Original Name:      nvvad.inf
+Provider Name:      NVIDIA
+Class Name:         Ses, video ve oyun denetleyicileri
+Class GUID:         {4d36e96c-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/28/2024 4.65.0.3
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem3.inf
+Original Name:      nv_dispig.inf
+Provider Name:      NVIDIA
+Class Name:         Görüntü baðdaþtýrýcýlarý
+Class GUID:         {4d36e968-e325-11ce-bfc1-08002be10318}
+Driver Version:     08/14/2024 32.0.15.6094
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem7.inf
+Original Name:      oemvista.inf
+Provider Name:      Windscribe.com
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/27/2019 9.24.2.601
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem59.inf
+Original Name:      oemvista.inf
+Provider Name:      TAP-Windows Provider V9
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/27/2019 9.24.2.601
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem42.inf
+Original Name:      ovpn-dco.inf
+Provider Name:      OpenVPN, Inc
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     05/22/2024 1.2.1.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem17.inf
+Original Name:      prnms001.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     06/21/2006 10.0.19041.1806
+Signer Name:        Microsoft Windows
+
+Published Name:     oem10.inf
+Original Name:      prnms009.inf
+Provider Name:      Microsoft
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     06/21/2006 10.0.19041.1806
+Signer Name:        Microsoft Windows
+
+Published Name:     oem39.inf
+Original Name:      rustdeskprinterdriver.inf
+Provider Name:      RustDesk
+Class Name:         Yazýcýlar
+Class GUID:         {4d36e979-e325-11ce-bfc1-08002be10318}
+Class Version:      4.0
+Driver Version:     07/26/2025 8.42.23.206
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem138.inf
+Original Name:      secumdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     06/19/2009 4.52.5.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem133.inf
+Original Name:      ssadadb2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         ADB Interface
+Class GUID:         {f72fe0d4-cbcb-407d-8814-9ed673d0dd6b}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem134.inf
+Original Name:      ssadmdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem135.inf
+Original Name:      ssadndis.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     05/13/2011 5.28.2.1
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem143.inf
+Original Name:      ssaeadb2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         ADB Interface
+Class GUID:         {f72fe0d4-cbcb-407d-8814-9ed673d0dd6b}
+Driver Version:     02/05/2010 5.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem145.inf
+Original Name:      ssaemdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/05/2010 5.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem146.inf
+Original Name:      ssaendis.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     02/05/2010 5.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem115.inf
+Original Name:      ssbcmdm2.inf
+Provider Name:      Samsung Electronics Co., LTD
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     07/05/2007 4.40.7.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem106.inf
+Original Name:      sscdw2k.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem108.inf
+Original Name:      sscemdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2012 5.30.14.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem120.inf
+Original Name:      ssecmdm2.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem121.inf
+Original Name:      ssecndis.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2009 4.50.3.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem102.inf
+Original Name:      ssm_mdm2.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/25/2009 5.12.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem111.inf
+Original Name:      sssdmdm2.inf
+Provider Name:      Samsung Electronic, Co. Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/25/2009 5.2.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem150.inf
+Original Name:      ssudadb.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         SAMSUNG Android Phone
+Class GUID:         {3f966bd9-fa04-4ec5-991c-d326973b5128}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem169.inf
+Original Name:      ssudaoa.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         SAMSUNG Android Open Accessory(AOA) devices
+Class GUID:         {ca000021-5064-48ea-8922-e08580f9955b}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem160.inf
+Original Name:      ssudeadb.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         ADB Interface
+Class GUID:         {f72fe0d4-cbcb-407d-8814-9ed673d0dd6b}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem154.inf
+Original Name:      ssudmdm.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem155.inf
+Original Name:      ssudmtp.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Taþýnabilir Aygýtlar
+Class GUID:         {eec5ad98-8080-425f-922a-dabf3de3f69a}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem156.inf
+Original Name:      ssudnd5.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem167.inf
+Original Name:      ssudnet.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem152.inf
+Original Name:      ssudqcnet.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem162.inf
+Original Name:      ssudrmnetmp.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd.
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem158.inf
+Original Name:      ssudrnds.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem170.inf
+Original Name:      ssuduvc_camera.inf
+Provider Name:      SAMSUNG Electronics Co., Ltd. 
+Class Name:         Kameralar
+Class GUID:         {ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+Driver Version:     09/23/2024 2.21.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem117.inf
+Original Name:      ss_bmdm2.inf
+Provider Name:      Samsung Electronics Co., LTD
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/19/2009 5.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem100.inf
+Original Name:      ss_mdm2.inf
+Provider Name:      SAMSUNG Electronics Co.,Ltd. 
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     09/21/2009 5.0.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem62.inf
+Original Name:      vboxnetadp6.inf
+Provider Name:      Oracle Corporation
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2026 7.2.6.22322
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem28.inf
+Original Name:      vboxnetlwf.inf
+Provider Name:      Oracle Corporation
+Class Name:         Að Hizmeti
+Class GUID:         {4d36e974-e325-11ce-bfc1-08002be10318}
+Driver Version:     01/15/2026 7.2.6.22322
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem140.inf
+Original Name:      via_usb_modem.inf
+Provider Name:      SAMSUNG Inc
+Class Name:         Modemler
+Class GUID:         {4d36e96d-e325-11ce-bfc1-08002be10318}
+Driver Version:     10/12/2009 2.0.23.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem58.inf
+Original Name:      wiahp008.inf
+Provider Name:      Hewlett-Packard
+Class Name:         Görüntüleme aygýtlarý
+Class GUID:         {6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Driver Version:     06/22/2006 10.0.17119.1
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem13.inf
+Original Name:      windtun420.inf
+Provider Name:      Windscribe Limited
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     11/30/2020 0.9.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem70.inf
+Original Name:      wintun.inf
+Provider Name:      WireGuard LLC
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     10/13/2021 0.14.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
+Published Name:     oem21.inf
+Original Name:      wireguard.inf
+Provider Name:      WireGuard LLC
+Class Name:         Að baðdaþtýrýcýlarý
+Class GUID:         {4d36e972-e325-11ce-bfc1-08002be10318}
+Driver Version:     10/12/2021 0.10.0.0
+Signer Name:        Microsoft Windows Hardware Compatibility Publisher
+
